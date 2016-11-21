@@ -8,5 +8,6 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'', include('registration.urls'))
-    url(r'^login/$', views.login, { 'template_name': 'login.html', 'authentication_form': LoginForm },)
+    url(r'^login/$', views.login, { 'template_name': 'login.html', 'authentication_form': LoginForm }),
+    url(r'^logout/$', views.logout, { 'next_page': '/login' }),
 ]
